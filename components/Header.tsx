@@ -1,12 +1,36 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import { primaryNav, services, company } from "@/lib/content";
 
 export default function Header() {
   const [open, setOpen] = useState(false);
   const [servicesOpen, setServicesOpen] = useState(false);
+  const servicesRef = useRef<HTMLDivElement>(null);
+
+  // Close the Services dropdown on outside click or Escape. Using a blur
+  // handler instead would fire before a dropdown link's click registers,
+  // making the links unreachable.
+  useEffect(() => {
+    if (!servicesOpen) return;
+
+    function onPointerDown(e: MouseEvent) {
+      if (!servicesRef.current?.contains(e.target as Node)) {
+        setServicesOpen(false);
+      }
+    }
+    function onKeyDown(e: KeyboardEvent) {
+      if (e.key === "Escape") setServicesOpen(false);
+    }
+
+    document.addEventListener("mousedown", onPointerDown);
+    document.addEventListener("keydown", onKeyDown);
+    return () => {
+      document.removeEventListener("mousedown", onPointerDown);
+      document.removeEventListener("keydown", onKeyDown);
+    };
+  }, [servicesOpen]);
 
   return (
     <header className="sticky top-0 z-50 border-b border-hairline bg-ink/90 backdrop-blur">
@@ -24,13 +48,12 @@ export default function Header() {
         >
           <UnderlineLink href="/">Home</UnderlineLink>
           <UnderlineLink href="/about_us">About</UnderlineLink>
-          <div className="relative">
+          <div className="relative" ref={servicesRef}>
             <button
               type="button"
               aria-expanded={servicesOpen}
               aria-haspopup="true"
               onClick={() => setServicesOpen((v) => !v)}
-              onBlur={() => setServicesOpen(false)}
               className="relative font-sans text-sm font-medium uppercase tracking-wide text-body-ondark transition-colors hover:text-accent-light focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent"
             >
               Services ▾
@@ -41,6 +64,7 @@ export default function Header() {
                   <Link
                     key={s.slug}
                     href={`/${s.slug}`}
+                    onClick={() => setServicesOpen(false)}
                     className="block rounded-md px-3 py-2 text-sm text-body-ondark transition-colors hover:bg-ink hover:text-accent-light focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent"
                   >
                     {s.title}
@@ -91,7 +115,7 @@ export default function Header() {
               </svg>
             </button>
           </div>
-          <nav aria-label="Mobile" className="mt-8 flex flex-col gap-1 overflow-y-auto">
+          <nav aria-label="Mobile" className="mt-8 flex min-h-0 flex-1 flex-col gap-1 overflow-y-auto">
             {primaryNav.map((l) => (
               <Link
                 key={l.href}
@@ -118,7 +142,7 @@ export default function Header() {
           </nav>
           <a
             href={company.phoneHref}
-            className="mt-auto rounded-btn bg-accent px-5 py-3.5 text-center font-sans text-sm font-semibold uppercase tracking-wide text-white"
+            className="mt-4 shrink-0 rounded-btn bg-accent px-5 py-3.5 text-center font-sans text-sm font-semibold uppercase tracking-wide text-white"
           >
             Call {company.phoneDisplay}
           </a>
