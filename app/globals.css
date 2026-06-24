@@ -1,0 +1,53 @@
+@import "tailwindcss";
+
+@theme {
+  --color-accent: #9C23FF;
+  --color-accent-light: #B57BFF;
+  --color-ink: #1D1623;
+  --color-ink-elevated: #271E31;
+  --color-surface-light: #F5F2F8;
+  --color-surface-card: #FFFFFF;
+  --color-body-onlight: #1D1623;
+  --color-body-ondark: #F4F1F7;
+  --color-body-muted: #B9AFC4;
+  --color-hairline: #3A2F47;
+
+  --font-display: var(--font-anton), "Impact", sans-serif;
+  --font-sans: var(--font-inter), system-ui, sans-serif;
+
+  --radius-btn: 12px;
+  --radius-card: 16px;
+
+  --container-content: 1200px;
+
+  --animate-marquee: marquee 28s linear infinite;
+  --animate-fade-up: fade-up 0.6s ease-out both;
+
+  @keyframes marquee {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+  }
+  @keyframes fade-up {
+    0% { opacity: 0; transform: translateY(16px); }
+    100% { opacity: 1; transform: translateY(0); }
+  }
+}
+
+:root { color-scheme: dark; }
+html { scroll-behavior: smooth; }
+body {
+  background-color: var(--color-ink);
+  color: var(--color-body-ondark);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+section { scroll-margin-top: 88px; }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation: none !important;
+    transition: none !important;
+    scroll-behavior: auto !important;
+  }
+}

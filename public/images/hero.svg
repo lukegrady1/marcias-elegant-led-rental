@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="800" viewBox="0 0 1000 800" role="img" aria-label="Lit Event / 360 Booth">
+  <rect width="1000" height="800" fill="#271E31"/>
+  <rect x="16" y="16" width="968" height="768" fill="none" stroke="#3A2F47" stroke-width="2"/>
+  <text x="50%" y="48%" fill="#F4F1F7" font-family="Arial, sans-serif" font-size="34" font-weight="700" text-anchor="middle">Lit Event / 360 Booth</text>
+  <text x="50%" y="58%" fill="#B57BFF" font-family="Arial, sans-serif" font-size="18" text-anchor="middle">[placeholder image — confirm]</text>
+</svg>

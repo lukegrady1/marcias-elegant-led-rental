@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="600" viewBox="0 0 800 600" role="img" aria-label="360 Photo Booth">
+  <rect width="800" height="600" fill="#271E31"/>
+  <rect x="16" y="16" width="768" height="568" fill="none" stroke="#3A2F47" stroke-width="2"/>
+  <text x="50%" y="48%" fill="#F4F1F7" font-family="Arial, sans-serif" font-size="34" font-weight="700" text-anchor="middle">360 Photo Booth</text>
+  <text x="50%" y="58%" fill="#B57BFF" font-family="Arial, sans-serif" font-size="18" text-anchor="middle">[placeholder image — confirm]</text>
+</svg>
