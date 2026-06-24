@@ -33,6 +33,7 @@ export default function Header() {
   }, [servicesOpen]);
 
   return (
+    <>
     <header className="sticky top-0 z-50 border-b border-hairline bg-ink/90 backdrop-blur">
       <div className="mx-auto flex max-w-content items-center justify-between gap-4 px-5 py-4">
         <Link
@@ -97,9 +98,10 @@ export default function Header() {
           </svg>
         </button>
       </div>
+    </header>
 
       {open && (
-        <div className="fixed inset-0 z-50 flex flex-col bg-ink p-6 lg:hidden">
+        <div className="fixed inset-0 z-[60] flex flex-col bg-ink p-6 lg:hidden">
           <div className="flex items-center justify-between">
             <span className="font-display text-xl uppercase tracking-tight">
               Menu
@@ -148,7 +150,7 @@ export default function Header() {
           </a>
         </div>
       )}
-    </header>
+    </>
   );
 }
 
