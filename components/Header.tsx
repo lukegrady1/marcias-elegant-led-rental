@@ -2,6 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { primaryNav, services, company } from "@/lib/content";
 
 export default function Header() {
@@ -38,9 +39,19 @@ export default function Header() {
       <div className="mx-auto flex max-w-content items-center justify-between gap-4 px-5 py-4">
         <Link
           href="/"
-          className="font-display text-xl uppercase tracking-tight text-body-ondark focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent"
+          className="flex items-center gap-3 font-display text-xl uppercase tracking-tight text-body-ondark focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent"
         >
-          Marcia&apos;s <span className="text-accent-light">LED</span>
+          <Image
+            src="/images/logo.png"
+            alt="Marcia's Elegant LED Rental Logistic LLC logo"
+            width={44}
+            height={44}
+            priority
+            className="h-11 w-11 rounded-full"
+          />
+          <span>
+            Marcia&apos;s <span className="text-accent-light">LED</span>
+          </span>
         </Link>
 
         <nav

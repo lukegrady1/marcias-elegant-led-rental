@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { company, services, socials } from "@/lib/content";
 
 export default function Footer() {
@@ -8,9 +9,18 @@ export default function Footer() {
         <div>
           <Link
             href="/"
-            className="font-display text-2xl uppercase tracking-tight text-body-ondark"
+            className="flex items-center gap-3 font-display text-2xl uppercase tracking-tight text-body-ondark"
           >
-            Marcia&apos;s <span className="text-accent-light">LED</span>
+            <Image
+              src="/images/logo.png"
+              alt="Marcia's Elegant LED Rental Logistic LLC logo"
+              width={48}
+              height={48}
+              className="h-12 w-12 rounded-full"
+            />
+            <span>
+              Marcia&apos;s <span className="text-accent-light">LED</span>
+            </span>
           </Link>
           <address className="mt-4 not-italic text-sm text-body-muted">
             {company.name}
