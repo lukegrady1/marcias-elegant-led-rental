@@ -39,19 +39,17 @@ export default function Header() {
       <div className="mx-auto flex max-w-content items-center justify-between gap-4 px-5 py-4">
         <Link
           href="/"
-          className="flex items-center gap-3 font-display text-xl uppercase tracking-tight text-body-ondark focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent"
+          aria-label="Marcia's Elegant LED Rental Logistic LLC — home"
+          className="flex items-center focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent"
         >
           <Image
             src="/images/logo.png"
             alt="Marcia's Elegant LED Rental Logistic LLC logo"
-            width={44}
-            height={44}
+            width={88}
+            height={88}
             priority
-            className="h-11 w-11 rounded-full"
+            className="h-[88px] w-[88px] rounded-full"
           />
-          <span>
-            Marcia&apos;s <span className="text-accent-light">LED</span>
-          </span>
         </Link>
 
         <nav
@@ -114,9 +112,20 @@ export default function Header() {
       {open && (
         <div className="fixed inset-0 z-[60] flex flex-col bg-ink p-6 lg:hidden">
           <div className="flex items-center justify-between">
-            <span className="font-display text-xl uppercase tracking-tight">
-              Menu
-            </span>
+            <Link
+              href="/"
+              aria-label="Marcia's Elegant LED Rental Logistic LLC — home"
+              onClick={() => setOpen(false)}
+              className="inline-flex items-center focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent"
+            >
+              <Image
+                src="/images/logo.png"
+                alt="Marcia's Elegant LED Rental Logistic LLC logo"
+                width={88}
+                height={88}
+                className="h-[88px] w-[88px] rounded-full"
+              />
+            </Link>
             <button
               type="button"
               aria-label="Close menu"

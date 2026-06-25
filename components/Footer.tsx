@@ -5,22 +5,20 @@ import { company, services, socials } from "@/lib/content";
 export default function Footer() {
   return (
     <footer className="border-t border-hairline bg-ink">
-      <div className="mx-auto grid max-w-content gap-10 px-5 py-14 md:grid-cols-2 lg:grid-cols-4">
-        <div>
+      <div className="mx-auto grid max-w-content grid-cols-2 gap-x-6 gap-y-10 px-5 py-10 md:grid-cols-2 md:py-14 lg:grid-cols-4">
+        <div className="col-span-2 md:col-span-1">
           <Link
             href="/"
-            className="flex items-center gap-3 font-display text-2xl uppercase tracking-tight text-body-ondark"
+            aria-label="Marcia's Elegant LED Rental Logistic LLC — home"
+            className="inline-flex items-center"
           >
             <Image
               src="/images/logo.png"
               alt="Marcia's Elegant LED Rental Logistic LLC logo"
-              width={48}
-              height={48}
-              className="h-12 w-12 rounded-full"
+              width={128}
+              height={128}
+              className="h-32 w-32 rounded-full"
             />
-            <span>
-              Marcia&apos;s <span className="text-accent-light">LED</span>
-            </span>
           </Link>
           <address className="mt-4 not-italic text-sm text-body-muted">
             {company.name}
