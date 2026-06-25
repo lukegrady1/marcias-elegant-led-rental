@@ -41,7 +41,7 @@ export default function LogoLink({
       className={linkClassName}
     >
       <Image
-        src="/images/logo.png"
+        src="/images/logo.webp"
         alt="Marcia's Elegant LED Rental Logistic LLC logo"
         width={width}
         height={height}

@@ -11,7 +11,9 @@ const repo = "marcias-elegant-led-rental";
 const nextConfig: NextConfig = {
   output: "export",
   trailingSlash: true,
-  images: { unoptimized: true },
+  // Custom loader prepends basePath to image src (next/image does not do this
+  // for static export, so images would otherwise 404 on the project sub-path).
+  images: { loader: "custom", loaderFile: "./image-loader.ts" },
   basePath: isProd ? `/${repo}` : "",
   assetPrefix: isProd ? `/${repo}/` : "",
 };

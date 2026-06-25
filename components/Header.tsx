@@ -38,11 +38,11 @@ export default function Header() {
     <header className="sticky top-0 z-50 border-b border-hairline bg-ink/90 backdrop-blur">
       <div className="mx-auto flex max-w-content items-center justify-between gap-4 px-5 py-4">
         <LogoLink
-          width={88}
-          height={88}
+          width={120}
+          height={120}
           priority
           linkClassName="flex items-center focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent"
-          imgClassName="h-[88px] w-[88px] rounded-full"
+          imgClassName="h-[120px] w-[120px] rounded-full"
         />
 
         <nav
@@ -106,11 +106,11 @@ export default function Header() {
         <div className="fixed inset-0 z-[60] flex flex-col bg-ink p-6 lg:hidden">
           <div className="flex items-center justify-between">
             <LogoLink
-              width={88}
-              height={88}
+              width={120}
+              height={120}
               onNavigate={() => setOpen(false)}
               linkClassName="inline-flex items-center focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent"
-              imgClassName="h-[88px] w-[88px] rounded-full"
+              imgClassName="h-[120px] w-[120px] rounded-full"
             />
             <button
               type="button"

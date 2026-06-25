@@ -32,7 +32,7 @@ export default function Hero() {
           <div className="overflow-hidden rounded-card border border-hairline">
             <div className="relative aspect-[5/4] w-full">
               <Image
-                src="/images/hero.png"
+                src="/images/hero.webp"
                 alt="A lit event with a 360 photo booth in action"
                 fill
                 priority
