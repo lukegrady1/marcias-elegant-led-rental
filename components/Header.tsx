@@ -2,7 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
-import Image from "next/image";
+import LogoLink from "./LogoLink";
 import { primaryNav, services, company } from "@/lib/content";
 
 export default function Header() {
@@ -37,20 +37,13 @@ export default function Header() {
     <>
     <header className="sticky top-0 z-50 border-b border-hairline bg-ink/90 backdrop-blur">
       <div className="mx-auto flex max-w-content items-center justify-between gap-4 px-5 py-4">
-        <Link
-          href="/"
-          aria-label="Marcia's Elegant LED Rental Logistic LLC — home"
-          className="flex items-center focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent"
-        >
-          <Image
-            src="/images/logo.png"
-            alt="Marcia's Elegant LED Rental Logistic LLC logo"
-            width={88}
-            height={88}
-            priority
-            className="h-[88px] w-[88px] rounded-full"
-          />
-        </Link>
+        <LogoLink
+          width={88}
+          height={88}
+          priority
+          linkClassName="flex items-center focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent"
+          imgClassName="h-[88px] w-[88px] rounded-full"
+        />
 
         <nav
           aria-label="Primary"
@@ -112,20 +105,13 @@ export default function Header() {
       {open && (
         <div className="fixed inset-0 z-[60] flex flex-col bg-ink p-6 lg:hidden">
           <div className="flex items-center justify-between">
-            <Link
-              href="/"
-              aria-label="Marcia's Elegant LED Rental Logistic LLC — home"
-              onClick={() => setOpen(false)}
-              className="inline-flex items-center focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent"
-            >
-              <Image
-                src="/images/logo.png"
-                alt="Marcia's Elegant LED Rental Logistic LLC logo"
-                width={88}
-                height={88}
-                className="h-[88px] w-[88px] rounded-full"
-              />
-            </Link>
+            <LogoLink
+              width={88}
+              height={88}
+              onNavigate={() => setOpen(false)}
+              linkClassName="inline-flex items-center focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent"
+              imgClassName="h-[88px] w-[88px] rounded-full"
+            />
             <button
               type="button"
               aria-label="Close menu"
