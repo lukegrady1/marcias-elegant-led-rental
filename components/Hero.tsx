@@ -32,8 +32,8 @@ export default function Hero() {
           <div className="overflow-hidden rounded-card border border-hairline">
             <div className="relative aspect-[5/4] w-full">
               <Image
-                src="/images/hero.svg"
-                alt="A lit event with a 360 photo booth in action [confirm — placeholder image]"
+                src="/images/hero.png"
+                alt="A lit event with a 360 photo booth in action"
                 fill
                 priority
                 sizes="(max-width:1024px) 100vw, 50vw"
